@@ -1,4 +1,4 @@
-import React, { FC, useState } from 'react';
+import React, { useState } from 'react';
 import { StyledContainer } from './App.styled';
 import './App.styled.ts';
 import Splash from './containers/Splash';

@@ -11,3 +11,5 @@ You can then run the app in development mode by running
 ### `npm start`
 
 This will open [http://localhost:3000](http://localhost:3000) for browser view. Please ensure an internet connection, as a call to a mock API is made initially.
+
+Run with Node.js version 12.18.0

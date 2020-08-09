@@ -39,7 +39,7 @@ const Splash: FC<SplashProps> = ({ setTableData, setError }) => {
       .catch((e) => {
         setError(e);
       });
-  }, []);
+  }, [setError, setTableData]);
 
   return (
     <StyledContainer>

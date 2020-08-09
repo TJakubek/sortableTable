@@ -18,7 +18,7 @@ const Cell: FC<CellProps> = ({
     if (isHovered) {
       setHoveredCell({ column: colInd, row: rowInd });
     }
-  }, [isHovered]);
+  }, [isHovered, colInd, rowInd, setHoveredCell]);
 
   return (
     <StyledCell

@@ -1,4 +1,4 @@
-import React, { Dispatch, forwardRef, Ref, SetStateAction, useEffect } from 'react';
+import React, { Dispatch, forwardRef, Ref, SetStateAction } from 'react';
 import columnConfig from 'src/config/columns';
 import Cell from '../Cell';
 import { StyledTableRow } from './styled';

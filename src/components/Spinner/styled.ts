@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledDiv = styled.svg`
   animation: rotate 2s linear infinite;

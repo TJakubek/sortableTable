@@ -1,6 +1,4 @@
-import React, {
-    createRef, FC, MutableRefObject, RefObject, useCallback, useEffect, useRef, useState
-} from 'react';
+import React, { createRef, FC, RefObject, useEffect, useState } from 'react';
 import Row from 'src/components/Row';
 import TableHeaders from 'src/components/TableHeaders';
 import { columns } from 'src/config/columns';
@@ -23,7 +21,7 @@ const Table: FC<TableProps> = ({ tableData }) => {
 
   useEffect(() => {
     setRefs(tableData.map(() => createRef<HTMLTableRowElement>()));
-  }, []);
+  }, [tableData]);
 
   useEffect(() => {
     const unsub = window.addEventListener('resize', () => {
@@ -33,7 +31,7 @@ const Table: FC<TableProps> = ({ tableData }) => {
     setRowTranslateVal(calcHeight(sortInfo, tableData, refs));
 
     return unsub;
-  }, [sortInfo.sort]);
+  }, [sortInfo.sort, refs, sortInfo, tableData]);
 
   return (
     <StyledTable>
