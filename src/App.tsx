@@ -1,25 +1,22 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { FC, useState } from 'react';
+import { StyledContainer } from './App.styled';
+import './App.styled.ts';
+import Splash from './containers/Splash';
+import Table from './containers/Table';
+import TryAgain from './containers/TryAgain';
 
 function App() {
+  const [tableData, setTableData] = useState<null | Data[]>(null);
+  const [error, setError] = useState();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <StyledContainer>
+      {!tableData && !error && (
+        <Splash setTableData={setTableData} setError={setError} />
+      )}
+      {tableData && <Table tableData={tableData} />}
+      {error && <TryAgain setError={setError} />}
+    </StyledContainer>
   );
 }
 
